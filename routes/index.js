@@ -1,10 +1,10 @@
-import { config } from "../config.js";
+import {config} from "../config.js";
 import webPush from 'web-push'
 import express from 'express'
-import {db} from '../db.js'
+import {pool} from '../db.js'
 import fs from 'fs'
 import path from 'path'
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url';
 
 const __filepath = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filepath);
@@ -96,13 +96,13 @@ router.post('/subscriptions', async (req, res) => {
     }
 })
 
-router.get('/test', async (req, res) =>{
-  try{
-      // res.end('Hello there testing is working...')
-      res.status(200).json({message: 'API is working'})
+router.get('/test', async (req, res) => {
+    try {
+        // res.end('Hello there testing is working...')
+        res.status(200).json({message: 'API is working'})
 
-  } catch (err) {
+    } catch (err) {
         res.status(500).json({message: 'Server error'})
-  }
+    }
 })
 
