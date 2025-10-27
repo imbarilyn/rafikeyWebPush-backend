@@ -35,6 +35,6 @@ const sendNotificationTask = async () =>{
 }
 
 export const startCronJob = ()=>{
-    cron.schedule('* * * * *', sendNotificationTask)
+    cron.schedule('*/5 * * * *', sendNotificationTask)
 }
 
