@@ -23,11 +23,11 @@ const sendNotificationTask = async () =>{
         clearTimeout(timeout)
     } catch(err) {
         if(err.name === 'AbortError'){
-            fs.writeFileSync(path.resolve(__dirname, 'log.txt'), `\n Fetch subscription from the database aborted due to timeout at ${new Date().toISOString()}`, 'utf-8', (err)=> {
+            fs.appendFileSync(path.resolve(__dirname, 'log.txt'), `\n Fetch subscription from the database aborted due to timeout at ${new Date().toISOString()}`, 'utf-8', (err)=> {
                 console.log('Error writing to log file', err)
             })
         } else {
-            fs.writeFileSync(path.resolve(__dirname, 'log.txt'), `\n Error in running cron job at ${new Date().toISOString()}: ${err.message}`, 'utf-8', (err)=> {
+            fs.appendFileSync(path.resolve(__dirname, 'log.txt'), `\n Error in running cron job at ${new Date().toISOString()}: ${err.message}`, 'utf-8', (err)=> {
                 console.log('Error writing to log file', err)
             })
         }
