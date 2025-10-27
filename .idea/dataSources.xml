@@ -15,11 +15,11 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/RafikeyWebPush</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="RafikeyWebPush@localhost [3]" uuid="f81016b8-4acc-4070-a2ea-30ae07debdab">
+    <data-source source="LOCAL" name="RafikeyWebPush@localhostProd" uuid="f81016b8-4acc-4070-a2ea-30ae07debdab">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/RafikeyWebPush</jdbc-url>
+      <jdbc-url>jdbc:postgresql://dpg-d3vnssndiees73f5bsj0-a.oregon-postgres.render.com:5432/rafikey_push_notification_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

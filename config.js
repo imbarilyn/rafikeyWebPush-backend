@@ -13,6 +13,7 @@ export const config = {
     SERVER_PORT: process.env.SERVER_PORT,
     VAPID_PUBLIC_KEY: process.env.VAPID_PUBLIC_KEY,
     VAPID_PRIVATE_KEY: process.env.VAPID_PRIVATE_KEY,
-    BACKEND_BASE_URL: process.env.BACKEND_BASE_URL
+    BACKEND_BASE_URL: process.env.BACKEND_BASE_URL,
+    DATABASE_URL_RENDER: process.env.DATABASE_URL_RENDER
 }
 
