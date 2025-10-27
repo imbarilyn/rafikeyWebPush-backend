@@ -8,5 +8,19 @@
       <jdbc-url>jdbc:aws-wrapper:mysql://localhost:3306/RafikeyWebPush</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="RafikeyWebPush@localhost [2]" uuid="84221009-54e2-45b9-b602-50a66c8ba41f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/RafikeyWebPush</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="RafikeyWebPush@localhost [3]" uuid="f81016b8-4acc-4070-a2ea-30ae07debdab">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/RafikeyWebPush</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
