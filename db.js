@@ -12,4 +12,8 @@ export const  pool = await  new Pool({
     password: config.DB_PASSWORD,
     database: config.DATABASE,
     port: config.DB_PORT,
+    max:10,
+    min: 4,
+    idleTimeoutMillis: 600000,
+
 })
