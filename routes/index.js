@@ -68,7 +68,7 @@ router.delete('/unsubscribe', async (req, res) => {
         if (!endpoint) {
             return res.status(400).json({message: 'Missing request body'})
         }
-        await db.query('DELETE FROM subscriptions WHERE endpoint = ?', [endpoint])
+        await pool.query('DELETE FROM subscriptions WHERE endpoint = $1', [endpoint])
         console.log('Unsubscribed successfully for endpoint:', endpoint)
         res.status(200).json({message: 'Unsubscribed successfully'})
     } catch (err) {
@@ -83,13 +83,15 @@ router.post('/subscriptions', async (req, res) => {
     try {
         const subscription = req.body;
 
-        const {endpoint, keys, user} = subscription
+        const {endpoint, keys, username} = subscription
 
-        const [rows] = await db.execute(
-            "INSERT INTO subscriptions (user, endpoint, p256dh, auth) VALUES (?, ?, ?, ?)", [user, endpoint, keys.p256dh, keys.auth]);
+
+        await pool.query(
+            "INSERT INTO subscriptions (username, endpoint, p256dh, auth) VALUES ($1, $2, $3, $4)",
+            [username, endpoint, keys.p256dh, keys.auth]);
         res.status(201).json({message: "Subscription saved successfully"})
-    } catch (e) {
-        console.log("Failed to save subscription", e)
+    } catch (err) {
+        console.log("Failed to save subscription", err)
         res.status(500).json({error: "Failed to save subscription"})
     }
 })
