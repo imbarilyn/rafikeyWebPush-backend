@@ -14,6 +14,7 @@ export const config = {
     VAPID_PUBLIC_KEY: process.env.VAPID_PUBLIC_KEY,
     VAPID_PRIVATE_KEY: process.env.VAPID_PRIVATE_KEY,
     BACKEND_BASE_URL: process.env.BACKEND_BASE_URL,
-    DATABASE_URL_RENDER: process.env.DATABASE_URL_RENDER
+    DATABASE_URL_RENDER: process.env.DATABASE_URL_RENDER,
+    BACKEND_APP_API: process.env.BACKEND_APP_API
 }
 
